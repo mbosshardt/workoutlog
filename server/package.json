@@ -7,6 +7,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 
 		"start": "node ./node_modules/http-server/bin/http-server"
+		// this start allows us to access the server from npm
 	},
 	"author": "Morgan Bosshardt",
 	"license": "MIT",
