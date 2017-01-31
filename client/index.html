@@ -37,18 +37,32 @@
 					<button class="btn btn-primary">Logout</button>
 				</div>
 			</div>
+			<!-- definition -->
+			<div class="tab-pane" id="define">
+				<h2>Define</h2>
+				<label for="def-description">Description</label>
+				<textarea class="form-control" id="def-description" rows="3"></textarea>
+				<label for="def-logtype">Log work by</label>
+				<select class="form-control" id="def-logtype">
+					<option>Time</option>
+					<option>Weight</option>
+					<option>Reps</option>
+				</select>
+				<button id="def-save" class="btn btn-primary">Save</button>
+			</div>
+
+			<div class="container">
+				<div class="tab-content">
+					<div class="tab-pane active" id="home">
+						<h2>Hello Workout Log!</h2>
+					</div>
+				</div>
+			</div>
 		</div>		
 	</div>
 
-	<div class="container">
-		<div class="tab-content">
-			<div class="tab-pane active" id="home">
-				<h2>Hello Workout Log!</h2>
-			</div>
-		</div>
-	</div>
 
-<!-- login -->
+	<!-- login -->
 	<div class="modal fade" id="login-modal" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -71,7 +85,7 @@
 		</div>
 	</div>
 
-<!-- sign up -->
+	<!-- sign up -->
 	<div class="modal fade" id="signup-modal" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -102,6 +116,7 @@
 	<!-- link to app.js -->
 	<script type="text/javascript" src="./app.js"></script>
 	<script src="./user/auth.js"></script>
+	<script src="./workouts/define.js"></script>
 </body>
 
 </html>

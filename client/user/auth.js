@@ -27,12 +27,13 @@ $(function(){
 				if (data.sessionToken) {
 					workoutlog.setAuthHeader(data.sessionToken);
 					console.log("You made it!");
-					console.log(data.sessionToken);
+					// console.log(data.sessionToken);
 				}
 
 				$("#signup-modal").modal("hide");
 				$(".disabled").removeClass("disabled");
 				$("#loginout").text("Logout");
+				
 			}).fail(function() {
 				$("su_error").text("There was an issue with sign up").show();
 			});
@@ -62,9 +63,10 @@ $(function(){
 			login.done(function(data) {
 				if(data.sessionToken) {
 					workoutlog.setAuthHeader(data.sessionToken);
+					console.log("You are now signed in");
 				}
 					$("#login-modal").modal("hide");
-					$("#disabled").removeClass("disabled");
+					$(".disabled").removeClass("disabled");
 					$("#loginout").text("Logout");
 				}).fail(function(){
 					$("#li_error").text("There was an issue with login").show();
@@ -77,9 +79,11 @@ $(function(){
 			if (window.localStorage.getItem("sessionToken")) {
 				window.localStorage.removeItem("sessionToken");
 				$("#loginout").text("Login");
+				console.log("You are now signed out");
 			}
 
 			// TODO: on logout make sure stuff is disabled
+			$(".nav-tabs a[data-toggle=tab]").addClass("disabled");
 		}
 
 	});
