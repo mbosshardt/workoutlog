@@ -11,7 +11,7 @@ var User = sequelize.import("./models/user.js");
 // creates the table in postgres
 // matches the model we defined
 // doesn't drop the db
-User.sync();	//sync( {force: true}) //WARNING: this will DROP the table!
+User.sync( {force: true}); //WARNING: this will DROP the table!
 
 app.use(bodyParser.json());
 
