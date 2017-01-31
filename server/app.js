@@ -13,9 +13,12 @@ User.sync(); 	//sync( {force: true}) //WARNING: this will DROP the table!
 
 app.use(bodyParser.json());
 
+app.use(require("./middleware/headers"));
+
 app.use("/api/user", require("./routes/user"));
 
-app.use(require("./middleware/headers"));
+//login route
+app.use("/api/login", require("./routes/session"));
 
 //this will send hello world to be printed when on the local host 3000
 app.use("/api/test", function(req, res) {

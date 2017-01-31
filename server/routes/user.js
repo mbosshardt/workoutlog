@@ -1,6 +1,8 @@
 var router = require("express").Router();
 var sequelize = require("../db.js");
 var User = sequelize.import("../models/user");
+var bcrypt = require("bcryptjs");
+var jwt = require("jsonwebtoken");
 
 router.post("/", function(req, res) {
 	// when we post to api ser, it will want a user object in the body
@@ -12,13 +14,15 @@ router.post("/", function(req, res) {
 	// Sequelize - take the user model and go out to the db and create this:
 	User.create({
 		username: username,
-		passwordhash: ""		// TODO: make it hashed
+		passwordhash: bcrypt.hashSync(pass, 10)		// TODO: make it hashed
 	}).then(
 		// Sequelize is going to return the object it created from db
 		function createSuccess(user){
+			var token = jwt.sign({id: user.id}, "i_am_secret", {expiresIn: 60*60*24});
 			res.json({
 				user: user,
-				message: "created"
+				message: "created",
+				sessionToken: token
 			});
 		},
 		function createError(err){
