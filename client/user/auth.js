@@ -26,6 +26,8 @@ $(function(){
 			signup.done(function(data) {
 				if (data.sessionToken) {
 					workoutlog.setAuthHeader(data.sessionToken);
+					console.log("You made it!");
+					console.log(data.sessionToken);
 				}
 
 				$("#signup-modal").modal("hide");

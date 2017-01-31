@@ -5,7 +5,7 @@ var User = sequelize.import("../models/user");
 module.exports = function(req, res, next) {
 	var sessionToken = req.headers.authorization;
 
-	if(!req.body.user && sessionToke) {
+	if(!req.body.user && sessionToken) {
 		jwt.verify(sessionToken, process.env.JWT_SECRET, function(err, decoded) {
 			if (decoded){
 				User.fineOne({where: { id: decoded.id}}).then(
