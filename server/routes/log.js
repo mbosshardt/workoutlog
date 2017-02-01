@@ -5,7 +5,7 @@ var User = sequelize.import("../models/user");
 var Definition = sequelize.import("../models/definition");
 
 router.post("/", function(req, res) {
-	var description = req.body.log.description;
+	var description = req.body.log.desc;
 	var result = req.body.log.result;
 	var user = req.user;
 	var definition = req.body.log.def;
@@ -23,7 +23,7 @@ router.post("/", function(req, res) {
 			res.json(log);
 		},
 		function createError(err) {
-			res.send(500, err.message);
+			res.status(500).send(err.message);
 		}
 	);
 });
@@ -39,7 +39,7 @@ router.get("/", function(req, res) {
 			res.json(data);
 		},
 		function findAllError(err) {
-			res.send(50, err.message);
+			res.status(500).send(err.message);
 		}
 	);
 });

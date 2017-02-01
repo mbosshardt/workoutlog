@@ -55,6 +55,8 @@ $(function(){
 		}
 	});
 
+	
+
 	var token = window.localStorage.getItem("sessionToken");
 	if (token) {
 		workoutlog.setAuthHeader(token);

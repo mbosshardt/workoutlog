@@ -50,14 +50,32 @@
 				</select>
 				<button id="def-save" class="btn btn-primary">Save</button>
 			</div>
-
-			<div class="container">
+			<!-- log -->
+			<div class="tab-pane" id="log">
+				<h2>Log</h2>
+				<label for="log-result">Result</label>
+				<input type="text" class="form-control" id="log-result" />
+				<label for="log-definition">Workout Type:</label>
+				<select class="form-control" id="log-definition">
+					
+				</select>
+				<label for="log-description">Notes:</label>
+				<textarea class="form-control" id="log-description" rows="3"></textarea>
+				<button id="log-save" class="btn btn-primary">Save</button>
+			</div>
+			<div class="tab-pane" id="history">
+				<h2>History</h2>
+				<ul class="list-group" id="history-list">
+					
+				</ul>
+			</div>
+<!-- 			<div class="container">
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">
 						<h2>Hello Workout Log!</h2>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>		
 	</div>
 
@@ -117,6 +135,7 @@
 	<script type="text/javascript" src="./app.js"></script>
 	<script src="./user/auth.js"></script>
 	<script src="./workouts/define.js"></script>
-</body>
+	<script src="./workouts/log.js"></script>
 
+</body>
 </html>
