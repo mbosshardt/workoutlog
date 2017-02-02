@@ -8,6 +8,8 @@ $(function(){
 				var opts;
 				for (var i = 0; i < len; i++) {
 					opts += "<option value=\"" + defs[i].id + "\">" + defs[i].description + "</option>";
+
+					// TODO: not allow duplicate entries
 				}
 				$("#log-definition").children().remove();
 				$("#log-definition").append(opts);
@@ -17,7 +19,7 @@ $(function(){
 				var len = history.length;
 				var lis = "";
 				for (var i = 0; i < len; i++) {
-					lis += "<li class=\"list-group-item\">" + hsitory[i].def + " - " + history[i].result + "</li>";
+					lis += "<li class=\"list-group-item\">" + history[i].def + " - " + history[i].result + "</li>";
 				}
 				$("#history-list").children().remove();
 				$("#history-list").append(lis);
@@ -39,6 +41,9 @@ $(function(){
 				logger.done(function(data) {
 					workoutlog.log.workouts.push(data);
 					console.log(data);
+					$("#log-description").val("");
+					$("#log-result").val("");
+					$(".nav-tabs a[href=\"#history\"]").tab("show");
 				});
 			},
 			fetchAll: function() {

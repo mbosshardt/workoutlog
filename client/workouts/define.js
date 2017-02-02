@@ -17,6 +17,9 @@ $(function(){
 				define.done(function(data){
 					workoutlog.definition.userDefinitions.push(data.definition);
 					console.log(data);
+					$("#def-description").val("");
+					$("#def-logtype").val("");
+					$(".nav-tabs a[href=\"#log\"]").tab("show");
 				});
 			},
 

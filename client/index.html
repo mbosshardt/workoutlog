@@ -22,7 +22,7 @@
 		<li><a href="#define" data-toggle="tab">Define</a></li>
 		<li><a href="#log" data-toggle="tab">Log</a></li>
 		<li><a href="#history" data-toggle="tab">View History</a></li>
-		<li><a href="#" id="testAPI">Test API</a></li>
+		<!-- <li><a href="#" id="testAPI">Test API</a></li> -->
 	</ul>
 
 	<div class="container">
@@ -38,32 +38,33 @@
 				</div>
 			</div>
 			<!-- definition -->
-			<div class="tab-pane" id="define">
+			<div class="tab-pane fade" id="define">
 				<h2>Define</h2>
 				<label for="def-description">Description</label>
-				<textarea class="form-control" id="def-description" rows="3"></textarea>
+				<textarea class="form-control" id="def-description" rows="3" placeholder="Description"></textarea>
 				<label for="def-logtype">Log work by</label>
 				<select class="form-control" id="def-logtype">
 					<option>Time</option>
 					<option>Weight</option>
 					<option>Reps</option>
+					<option>Distance</option>
 				</select>
 				<button id="def-save" class="btn btn-primary">Save</button>
 			</div>
 			<!-- log -->
-			<div class="tab-pane" id="log">
+			<div class="tab-pane fade" id="log">
 				<h2>Log</h2>
 				<label for="log-result">Result</label>
-				<input type="text" class="form-control" id="log-result" />
+				<input type="text" class="form-control" id="log-result" placeholder="Result" />
 				<label for="log-definition">Workout Type:</label>
 				<select class="form-control" id="log-definition">
 					
 				</select>
 				<label for="log-description">Notes:</label>
-				<textarea class="form-control" id="log-description" rows="3"></textarea>
+				<textarea class="form-control" id="log-description" rows="3" placeholder="Notes"></textarea>
 				<button id="log-save" class="btn btn-primary">Save</button>
 			</div>
-			<div class="tab-pane" id="history">
+			<div class="tab-pane fade" id="history">
 				<h2>History</h2>
 				<ul class="list-group" id="history-list">
 					
@@ -91,9 +92,9 @@
 				<div class="modal-body">
 					<div class="alert alert-danger" style="display: none;" role="alert" id="li_error"></div>
 					<label for="li_username">Username:</label>
-					<input id="li_username" />
+					<input id="li_username" placeholder="Username" />
 					<label for="li_password">Password:</label>
-					<input type="password" id="li_password">
+					<input type="password" id="li_password" placeholder="Password">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -114,9 +115,9 @@
 				<div class="modal-body">
 					<div class="alert alert-danger" role="alert" style="display: none;" id="su_error"></div>
 					<label for="su_username">Username:</label>
-					<input id="su_username" />
+					<input id="su_username" placeholder="Username" />
 					<label for="su_password">Password:</label>
-					<input type="password" id="su_password" />
+					<input type="password" id="su_password" placeholder="Password" />
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
